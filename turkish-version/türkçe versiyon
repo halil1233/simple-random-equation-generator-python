@@ -1,0 +1,65 @@
+import random
+print("Rastgele denklem oluşturucuya hoşgeldiniz.")
+while True:
+    soru = "buna göre x kaçtır?"
+    dogru = "Tebrikler cevabınız doğru."
+    yanlis = "cevabınız yanlış."
+    cevap = "Doğru cevap:"
+    isaretler1 = ["*","/"]
+    isaretler2 = ["+","-"]
+    x = random.randint(1,10)
+    y = random.randint(1,10)
+    z = random.randint(1,10)
+    a = random.choice(isaretler1)
+    b = random.choice(isaretler2)
+    kontrol1 = y/z
+    kontrol2 = y//z
+    if kontrol1 == kontrol2 and kontrol2 > 0 and kontrol1 > 0 and y > x:
+        # y*x-z =?
+        if a == "*" and b == "+":
+            islem1 = int(y) * int(x)
+            sonuc = int(islem1) + int(z)
+            print(y, a, "x", b, z, "=", sonuc, soru)
+            alinan = int(input("Lütfen cevabı giriniz."))
+            if alinan == x:
+                print(dogru)
+            else:
+                print(yanlis)
+                print(cevap, x)
+        # y*x-z = ?
+        elif a == "*" and b == "-":
+            islem1 = int(y) * int(x)
+            sonuc = int(islem1) - int(z)
+            print(y, a, "x", b, z, "=", sonuc, soru)
+            alinan = int(input("Lütfen cevabı giriniz."))
+            if alinan == x:
+                print(dogru)
+            else:
+                print(yanlis)
+                print(cevap, x)
+        # y/x+z = ?
+        elif a == "/" and b == "+":
+            islem1 = int(y) // int(x)
+            islem2 = round(islem1)
+            sonuc = int(islem2) - int(z)
+            print(y, a, "x", b, z, "=", sonuc, soru)
+            alinan = int(input("Lütfen cevabı giriniz."))
+            if alinan == x:
+                print(dogru)
+            else:
+                print(yanlis)
+                print(cevap, x)
+        # y/x-z= ?
+        elif a == "/" and b == "-":
+            islem1 = int(y) // int(x)
+            islem2 = round(islem1)
+            sonuc = int(islem2) - int(z)
+            print(y, a, "x", b, z, "=", sonuc, soru)
+            alinan = int(input("Lütfen cevabı giriniz."))
+            if alinan == x:
+                print(dogru)
+            else:
+                print(yanlis)
+                print(cevap, x)
+    else:
+        continue
